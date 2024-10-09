@@ -4,6 +4,7 @@ import axios from "axios";
 import useDebounce from "@/customHook/useDebounce";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 const fetchWeather = async (city: string) => {
   try {
     const { data } = await axios.get(
@@ -24,7 +25,7 @@ const fetchWeather = async (city: string) => {
 };
 
 const Weather = () => {
-  const [city, setCity] = useState("New York");
+  const [city, setCity] = useState("New Delhi");
   const [inputError, setInputError] = useState("");
   const debouncedCity = useDebounce(city, 1000);
   const { data, isLoading, isError, error } = useQuery(
